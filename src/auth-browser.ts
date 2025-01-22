@@ -13,7 +13,7 @@ export class DefaultBrowser extends Browser {
   public showWindow(url: string): string | undefined {
     const openWindow = window.open(url, '_self');
     if (openWindow) {
-      openWindow.addEventListener('beforeupload', () => this.onCloseFunction());
+      openWindow.addEventListener('beforeupload', this.onCloseFunction);
     }
 
     return;
